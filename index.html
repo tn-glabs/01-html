@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>Moon Gà</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #000;
+      -webkit-user-select: none; user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #canvas {
+      display: block;
+      width: 100vw; height: 100vh;
+      touch-action: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <!-- 1. Version JSON (hardcoded) -->
+  <script src="version-data.js"></script>
+
+  <!-- 2. wx API shim — must run before anything else -->
+  <script src="wx-shim.js"></script>
+
+  <!-- 3. Libraries (bridge.js expects these as globals) -->
+  <script src="libs/Tween.js"></script>
+  <script src="libs/three.js"></script>
+  <script src="libs/OBJLoader.js"></script>
+  <script src="libs/pixi.js"></script>
+  <script src="libs/SPE.js"></script>
+
+  <!-- 4. Flags mirroring game.js -->
+  <script>
+    window.DEVELOP = false;
+    window.DEBUG = false;
+  </script>
+
+  <!-- 5. Game entry -->
+  <script src="bridge.js"></script>
+</body>
+</html>
